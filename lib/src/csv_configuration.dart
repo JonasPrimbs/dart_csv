@@ -33,7 +33,7 @@ final class CsvConfiguration {
   final RegExp? disallowedCharacters;
 
   /// The number format.
-  final NumberFormat numberFormat;
+  final NumberFormat? numberFormat;
 
   /// The character encoding of the CSV file.
   final Encoding encoding;
@@ -65,7 +65,6 @@ final class CsvConfiguration {
         escapeMacros: escapeMacros,
         allowedCharacters: allowedCharacters,
         disallowedCharacters: disallowedCharacters,
-        numberFormat: NumberFormat('#0.#', 'en_US'),
         encoding: encoding,
       );
 
@@ -95,7 +94,6 @@ final class CsvConfiguration {
         escapeMacros: escapeMacros,
         allowedCharacters: allowedCharacters,
         disallowedCharacters: disallowedCharacters,
-        numberFormat: NumberFormat('#0.#', 'en_US'),
         encoding: encoding,
       );
 
@@ -129,7 +127,7 @@ final class CsvConfiguration {
         disallowedCharacters: disallowedCharacters == null
             ? RegExp(r'\t')
             : RegExp('\t|${disallowedCharacters.pattern}'),
-        numberFormat: numberFormat ?? NumberFormat('#0.#', 'en_US'),
+        numberFormat: numberFormat,
         encoding: encoding ?? utf8,
       );
 
@@ -168,7 +166,7 @@ final class CsvConfiguration {
         disallowedCharacters: disallowedCharacters == null
             ? RegExp(r'\t')
             : RegExp('\t|${disallowedCharacters.pattern}'),
-        numberFormat: numberFormat ?? NumberFormat('#0.#', 'en_US'),
+        numberFormat: numberFormat,
         encoding: encoding ?? utf8,
       );
 
@@ -181,7 +179,7 @@ final class CsvConfiguration {
     this.escapeMacros = true,
     this.allowedCharacters,
     this.disallowedCharacters,
-    required this.numberFormat,
+    this.numberFormat,
     this.encoding = utf8,
   });
 }

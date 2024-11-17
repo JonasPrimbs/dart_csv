@@ -1,6 +1,6 @@
 name: dart_csv
 description: A Dart package to write comma separated values to a file.
-version: 1.0.1
+version: 1.0.2
 repository: https://github.com/JonasPrimbs/dart_csv
 
 environment:

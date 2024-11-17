@@ -90,11 +90,13 @@ final class CsvWriter {
           if (configuration.stringEscapeMode == CsvStringEscapeModes.all) {
             // Escape string.
             return configuration.stringEscape.escape(
-              configuration.numberFormat.format(numberValue),
+              configuration.numberFormat?.format(numberValue) ??
+                  numberValue.toString(),
             );
           } else {
             // Do not escape string.
-            return configuration.numberFormat.format(numberValue);
+            return configuration.numberFormat?.format(numberValue) ??
+                numberValue.toString();
           }
         // Convert boolean:
         case bool booleanValue:
